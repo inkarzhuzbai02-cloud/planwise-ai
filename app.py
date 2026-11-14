@@ -6,7 +6,7 @@ from PIL import Image
 from google import genai
 from google.genai import types
 
-MODEL = "gemini-3.8-flash"
+MODEL = "gemini-flash-lite-latest"
 
 PROMPT = """Ты опытный архитектор-консультант. Проанализируй план здания
 на изображении с учётом требований пользователя. Ответь ТОЛЬКО JSON:

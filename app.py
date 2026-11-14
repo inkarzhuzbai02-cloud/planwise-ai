@@ -74,7 +74,7 @@ if st.button("Анализировать", type="primary"):
     st.image(img, caption="Загруженный план")
     with st.spinner("ИИ анализирует план..."):
         try:
-            client = genai.Client(api_key=key)
+            client = genai.Client(api_key=key, http_options=types.HttpOptions(retry_options=types.HttpRetryOptions(attempts=5)))
             text = PROMPT + "\nЯзык ответа: " + lang + "\nТребования: " + (req or "не указаны")
             resp = client.models.generate_content(
                 model=MODEL,
